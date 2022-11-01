@@ -1,0 +1,181 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--bg);
+    font-family: 'Roboto Slab', serif;
+}
+
+:root{
+    --bg: #C9C5BA;
+
+    --nav: #E7DFCD;
+    --nav-a: #051923;
+
+    --box-color1: #53599A;
+    --box-color2: #CEC075;
+    --box-color3: #CF9893;
+    --box-color4: #CD533B;
+    --box-color5: #7DD181;
+    --box-color6: #260F26;
+}
+
+
+/*navbar*/
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--nav);
+}
+
+
+.logo{
+    height: 60px;
+    padding: 0 1rem;
+}
+
+
+ul{
+    list-style: none;
+    display: flex;
+}
+
+li{
+    padding: 1rem 2rem;
+    display: flex;
+}
+
+li a{
+    text-decoration: none;
+    color: var(--nav-a);
+    font-size: 24px;
+    font-weight: 400;
+}
+
+
+@media only screen and (max-width: 600px){
+    nav{
+        display: none;
+    }
+}
+
+
+/*home page - tekst*/
+
+.simple-text{
+    margin: 0 0 3rem 0;
+}
+
+.simple-text h1{
+    text-align: center;
+    font-size: 48px;
+    margin: 3rem 0;
+}
+.simple-text p{
+    text-align: center;
+    font-size: 18px;
+
+}
+
+.simple-text hr{
+    background: linear-gradient(90deg, rgba(83,89,154,1) 0%, rgba(38,15,38,1) 100%);    border: none;
+    height: 4px;
+    width: 180px;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+
+/*home page - divs*/
+
+.home{
+    height: 100vh;
+}
+
+
+.some-divs{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.one-box{
+    width: calc(350px + 2rem);
+    height: calc(350px + 2rem);
+    background-color: var(--box-color1);
+    border-radius: 75px 0;
+    margin: 0 2rem 0 0;
+}
+
+.two-and-three-box{
+    display: flex;
+}
+
+.two-box{
+    width: 175px;
+    height: 175px;
+    background-color: var(--box-color2);
+    border-radius: 25px 0 0 25px;
+    margin: 0 1rem 0 0;
+}
+.three-box{
+    width: 175px;
+    height: 175px;
+    background-color: var(--box-color3);
+    border-radius: 0 25px 25px 0;
+    margin: 0 0 0 1rem;
+}
+
+.four-box{
+    height: 175px;
+    width: calc(350px + 2rem);
+    background-color: var(--box-color4);
+    border-radius: 10px;
+    margin: 2rem 0 0 0;
+}
+
+.five-box{
+    width: 350px;
+    height: 175px;
+    background-color: var(--box-color5);
+    border-radius: 25px;
+    margin: 0 0 2rem 2rem;
+}
+.six-box{
+    width: 350px;
+    height: 175px;
+    background-color: var(--box-color6);
+    border-radius: 25px;
+    margin: 0 0 0 2rem;
+}
+
+@media only screen and (max-width: 1300px){
+
+    .some-divs{
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+
+    .one-box{
+        margin: 0 0 2rem 0;
+        display: flex;
+    }
+
+    .five-box,
+    .six-box{
+        width: calc(350px + 2rem);
+        margin: 2rem 0 0 0;
+    }
+}
