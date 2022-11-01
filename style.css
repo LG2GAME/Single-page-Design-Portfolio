@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body{
@@ -22,6 +23,10 @@ body{
     --box-color4: #CD533B;
     --box-color5: #7DD181;
     --box-color6: #260F26;
+
+    --about-title: #1C1D21;
+    --about-paragraph: rgba(0, 0, 0, .6);
+    --about-btn: #FF6F59;
 }
 
 
@@ -57,12 +62,76 @@ li a{
     color: var(--nav-a);
     font-size: 24px;
     font-weight: 400;
+    transition: all .2s ease-in-out;
+}
+
+.element-home a:hover{
+    font-weight: 700;
+}
+
+.hamburger{
+    cursor: pointer;
+    display: none;
+    position: relative;
+}
+
+.hamburger div{
+    align-items: center;
+    background-color: var(--nav-a);
+    border-radius: 6px;
+    height: 6px;
+    margin-top: 8px;
+    width: 50px;
 }
 
 
-@media only screen and (max-width: 600px){
-    nav{
-        display: none;
+@media only screen and (max-width: 1250px){
+    
+    ul{
+        background-color: var(--nav);
+        flex-direction: column;
+        font-size: italic;
+        height: 91vh;
+        justify-content: space-between;
+        position: absolute;
+        right: 0;
+        top: 9.5vh;
+        transform: translate(105%);
+        transition: .5s ease-in-out;
+        width: 50vw;
+        z-index: 10;
+        align-items: center;
+        justify-content: center;
+    }
+
+    ul.active{
+        transform: translate(0%);
+    }
+
+    li a{
+        font-size: 64px;
+        font-weight: 600;
+        letter-spacing: 5px;
+        margin: 1rem;
+    }
+
+    li{
+        padding: 0;
+    }
+
+    .hamburger{
+        display: block;
+        transition: .5s ease-in-out;
+    }
+
+    .hamburger.active{
+        transform: rotate(270deg);
+    }
+}
+
+@media only screen and (max-width: 800px){
+    ul{
+        width: 100%;
     }
 }
 
@@ -70,7 +139,7 @@ li a{
 /*home page - tekst*/
 
 .simple-text{
-    margin: 0 0 3rem 0;
+    margin: 0 0 5rem 0;
 }
 
 .simple-text h1{
@@ -95,7 +164,7 @@ li a{
 
 /*home page - divs*/
 .home{
-    margin-bottom: 10rem;
+    margin-bottom: 8rem;
 }
 
 
@@ -112,9 +181,7 @@ li a{
     height: calc(350px + 2rem);
     background-color: var(--box-color1);
     border-radius: 75px 0;
-    margin: 0 2rem 0 0;
     position: relative;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .two-and-three-box{
@@ -126,18 +193,14 @@ li a{
     height: 175px;
     background-color: var(--box-color2);
     border-radius: 25px 0 0 25px;
-    margin: 0 1rem 0 0;
     position: relative;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .three-box{
     width: 175px;
     height: 175px;
     background-color: var(--box-color3);
     border-radius: 0 25px 25px 0;
-    margin: 0 0 0 1rem;
     position: relative;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .four-box{
@@ -145,28 +208,36 @@ li a{
     width: calc(350px + 2rem);
     background-color: var(--box-color4);
     border-radius: 10px 10px 0 0;
-    margin: 2rem 0 0 0;
     position: relative;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .five-box{
-    width: 350px;
     height: 175px;
+    width: 350px;
     background-color: var(--box-color5);
     border-radius: 25px;
-    margin: 0 0 2rem 2rem;
     position: relative;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .six-box{
-    width: 350px;
     height: 175px;
+    width: 350px;
     background-color: var(--box-color6);
     border-radius: 25px;
-    margin: 0 0 0 2rem;
     position: relative;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.one-box,
+.two-box,
+.three-box,
+.four-box,
+.five-box,
+.six-box{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 8px;
+    margin: 1rem;
+}
+.five-box,
+.six-box{
+    margin: 2rem;
 }
 
 
@@ -210,72 +281,87 @@ li a{
 }
 
 
+
 .about{
-    height: 70vh;
     display: flex;
-    justify-content: space-between;
 }
 
-.about img{
+.about-img{
     width: 600px;
     height: 600px;
     border-radius: 100%;
-    margin-left: 25%;
-    transform: translate(-50%);
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    margin: auto;
 }
 
-.about-title{
+.about-tekst{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-tekst h1{
     font-size: 48px;
-    text-align: center;
-    color: #fff;
-    background-color: #000;
-    width: 90%;
-    float: right;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;}
-.about-paragraph{
-    background-color: #fff;
+    color: var(--about-title);
+    text-align: right;
+    margin-bottom: 2rem;
+}
+.about-tekst p{
+    color: var(--about-paragraph);
     font-size: 24px;
-    width: 80%;
-    float: right;
+    font-weight: 400;
+    padding: .4rem;
 }
 
-@media only screen and (max-width: 1600px){
+.about-btn{
+    padding: 1rem;
+    border-radius: 100px;
+    width: 250px;
+    border: none;
+    background-color: var(--about-btn);
+    margin-top: 2rem;
+}
+.about-btn a{
+    font-size: 20px;
+    text-transform: lowercase;
+    color: #fff;
+    text-decoration: none;
+}
 
-
-    .about img{
+@media only screen and (max-width: 1550px){
+    .about-img{
         width: 400px;
         height: 400px;
-        margin-top: 25%;
-        transform: translate(-50%, -50%);
+        margin-bottom: 3rem;
     }
 
+    .about-tekst h1{
+        font-size: 32px;
+    }
+    .about-tekst p{
+        font-size: 18px;
+    }
+
+    .about-btn{
+        width: 200px;
+    }
+    .about-btn a{
+        font-size: 18px;
+    }
 }
 
-@media only screen and (max-width: 1400px){
+@media only screen and (max-width: 1150px){
     .about{
         display: block;
     }
-    .about img{
-        margin-left: 50%;
-        width: 450px;
-        height: 450px;
+    .about-img{
+        display: flex;
     }
 
-
-    .about-title{
-        width: 70%;
+    .about-tekst h1,
+    .about-tekst p{
+        text-align: center;
     }
-    .about-paragraph{
-        width: 60%;
-    }
-}
-
-@media only screen and (max-width: 1000px){
-    .about-title{
-        width: 100%;
-    }
-    .about-paragraph{
-        width: 100%;
+    .about-btn{
+        margin: 5rem auto 1rem auto;
     }
 }
