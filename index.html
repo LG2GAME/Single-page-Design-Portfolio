@@ -12,9 +12,13 @@
     <title>Single-page portfolio</title>
 </head>
 <body>
+    <!-- Navbar menu: logo | home | about | work -->
     <nav>
+        <!-- logo of page (ananas) -->
             <img src="logo.png" alt="logo" class="logo">
+        <!-- container with navbar list -->
         <div class="menu">
+            <!-- unordered list -->
             <ul class="list">
                 <li class="element-home">
                     <a href="#home">home</a>
@@ -26,6 +30,7 @@
                     <a href="#work">work</a>
                 </li>
             </ul>
+            <!-- hamburger menu icon -->
             <div class="hamburger">
                 <div class="line"></div>
                 <div class="line"></div>
@@ -34,69 +39,55 @@
         </div>
     </nav>
 
-    <div class="home" id="home">
+    <!-- home page: simple header | some paragraphs with tekst and containers -->
+    <div id="home" class="container-home">
+        <!-- home container -->
         <div class="simple-text">
-
+            <!-- header of page -->
             <h1>Lorem ipsum dolor sit amet.<hr></h1>
+            <!-- paragraphs with lorem -->
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
             <p>Repellat omnis optio suscipit explicabo. Explicabo, ex est.</p>
             <p>Dicta at tenetur labore quam, nulla magnam quidem?</p>
 
         </div>
-        <div class="some-divs">
 
-            <span class="one-container">
-                <div class="one-box">
-                    <img src="" alt="">
-                    <p>Graphic Design</p>
-                </div>
-            </span>
-
-            <span class="two-container">
-                <span class="two-and-three-box">
-                    <div class="two-box">
-                        <img src="uiux.png" alt="" class="uiux">
-                        <p>UI/UX</p>
-                    </div>
-                    <div class="three-box">
-                        <img src="apps.png" alt="">
-                        <p>Apps</p>
-                    </div>
-                </span>
-                <div class="four-box">
-                    <img src="ilustrations.png" alt="">
-                    <p>Ilustrations</p>
-                </div>
-            </span>
-
-            <span class="three-container">
-                <div class="five-box">
-                    <img src="photography.png" alt="">
-                    <p>Photography</p>
-                </div>
-                <div class="six-box">
-                    <img src="motiongraphics.png" alt="">
-                    <p>Motion Graphics</p>
-                </div>
-            </span>
+        <!-- Grid elements -->
+        <div class="box-container">
+            <div class="wraper">
+                <div class="box-1"></div>
+                <div class="box-2"></div>
+                <div class="box-3"></div>
+                <div class="box-4"></div>
+                <div class="box-5"></div>
+                <div class="box-6"></div>
+          </div>
         </div>
+        
     </div>
 
+    <!-- about page: photo (random img from: pixabay) | header | paragraphs -->
     <div class="about" id="about">
+        <!-- photo of girl from: pixabay -->
         <img src="about-me.jpg" alt="photo" class="about-img">
+        <!-- container with tekst -->
         <div class="about-tekst">
-            <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+            <!-- header of this container -->
+            <h2>Lorem ipsum dolor sit amet consectetur.</h1>
+            <!-- paragraphs container -->
             <div>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <p>Ducimus, accusantium? Facere odit deserunt quo incidunt obcaecati.</p>
                 <p>Sint dignissimos quas blanditiis saepe libero error quia?</p>
             </div>
+            <!-- simple button: free consultations -->
             <button class="about-btn">
                 <a href="#">Free Consultation</a>
             </button>
         </div>
     </div>
 
+    <!-- javascript -->
     <script src="script.js"></script>
 
 </body>
