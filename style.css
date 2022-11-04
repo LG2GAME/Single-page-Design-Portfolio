@@ -37,10 +37,25 @@ nav{
     padding: 1.5rem;
     background-color: var(--nav);
 }
-
 .logo{
+    margin-left: 10%;
+}
+.square{
+    background-color: #000;
+    width: 60px;
     height: 60px;
-    padding: 0 1rem;
+    position: relative;
+}
+.circle{
+    width: 30px;
+    height: 30px;
+    border: 4px solid;
+    border-color: #fff;
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* unordered list */
