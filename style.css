@@ -26,6 +26,7 @@ body{
     --about-title: #1C1D21;
     --about-paragraph: rgba(0, 0, 0, .6);
     --about-btn: #FF6F59;
+    --about-btn-hover: #FF5D44;
 }
 
 
@@ -228,6 +229,7 @@ li a{
 .box-6{
     position: relative;
     border-radius: 30px;
+    transition: all .2s ease-in-out;
 }
 
 /* box tekst */
@@ -237,6 +239,16 @@ li a{
     bottom: 0;
     padding: 15px;
 
+}
+
+.box-1:hover,
+.box-2:hover,
+.box-3:hover,
+.box-4:hover,
+.box-5:hover,
+.box-6:hover{
+    margin: 3px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 /* MEDIA QUERIES for:  1500px*/
@@ -364,7 +376,7 @@ li a{
     border-radius: 100px;
     border: none;
     margin-top: 2rem;
-    padding: 1rem;
+    display: flex;
     text-align: center;
     width: 250px;
 }
@@ -373,6 +385,14 @@ li a{
     text-transform: lowercase;
     color: #fff;
     text-decoration: none;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 100px;
+}
+.about-btn:hover{
+    transition: all .3s;
+    background-color: var(--about-btn-hover);
 }
 
 /* MEDIA QUERIES for: 1550px */
