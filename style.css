@@ -39,6 +39,7 @@ nav{
 }
 .logo{
     margin-left: 10%;
+    z-index: 20;
 }
 .square{
     background-color: #000;
@@ -189,6 +190,7 @@ li a{
    grid-template-columns: repeat(6, 200px);
    grid-template-rows: repeat(2, 200px);
    margin: 0 0 100px 0;
+   padding: 1rem;
 }
 
 /* all boxes 1 to 6 */
@@ -356,24 +358,24 @@ li a{
 
 /* img of girl from: pixabay */
 .about-img{
-    width: 500px;
-    height: 500px;
     border-radius: 100%;
+    height: 500px;
     margin: auto;
     padding: 2rem;
+    width: 500px;
 }
 
 /* tekst on about page */
 .about-tekst{
-    justify-content: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     max-width: 50%;
 }
 /* simple header under photo */
 .about-tekst h2{
-    font-size: 48px;
     color: var(--about-title);
+    font-size: 48px;
     margin-bottom: 2rem;
     padding: 0;
 }
@@ -386,39 +388,44 @@ li a{
 }
 
 /* simple button under teksts */
-.about-btn{
+.consultation-btn{
     background-color: var(--about-btn);
     border-radius: 100px;
     border: none;
-    margin-top: 2rem;
     display: flex;
+    margin-top: 2rem;
     text-align: center;
     width: 250px;
 }
-.about-btn a{
-    font-size: 20px;
-    text-transform: lowercase;
+.consultation-btn a{
+    border-radius: 100px;
     color: #fff;
-    text-decoration: none;
-    width: 100%;
+    font-size: 20px;
     height: 100%;
     padding: 1rem;
-    border-radius: 100px;
+    text-decoration: none;
+    text-transform: lowercase;
+    width: 100%;
 }
-.about-btn:hover{
-    transition: all .3s;
+.consultation-btn:hover{
     background-color: var(--about-btn-hover);
+    transition: all .3s;
 }
 
 /* MEDIA QUERIES for: 1550px */
 @media only screen and (max-width: 1550px){
     /* img of girl from: pixabay */
     .about-img{
-        width: 400px;
         height: 400px;
         margin-bottom: 3rem;
+        width: 400px;
     }
 
+    .about-tekst{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
     /* simple header under photo */
     .about-tekst h2{
         font-size: 32px;
@@ -429,10 +436,10 @@ li a{
     }
 
     /* simple button under teksts */
-    .about-btn{
+    .consultation-btn{
         width: 200px;
     }
-    .about-btn a{
+    .consultation-btn a{
         font-size: 18px;
     }
 }
@@ -440,19 +447,112 @@ li a{
 /* MEDIA QUERIES for: 1150px */
 @media only screen and (max-width: 1150px){
     .about{
-        display: block;
-    }
-    .about-img{
         display: flex;
+        flex-direction: column;
     }
-    /* simple header and paragraph under photo */
-    .about-tekst h2,
-    .about-tekst p{
-        text-align: center;
+    .about-tekst{
+        margin: auto;
     }
+}
 
-    /* simple button under teksts */
-    .about-btn{
-        margin: 5rem auto 1rem auto;
+/* section of 'my work' */
+.work{
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 4px;
+    display: flex;
+    margin: 8rem auto;
+    padding: 2rem 0;
+    position: relative;
+    width: 1600px;
+}
+.card img{
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px;
+    transition: all .5s ease-in-out;
+    width: 100%;
+}
+.card h3{
+    color: rgba(0, 0, 0, .6);
+    display: flex;
+    font-size: 32px;
+    font-weight: 700;
+    justify-content: center;
+    opacity: 0;
+    position: relative;
+    transition: all .5s ease-in-out;
+}
+.card:hover h3{
+    transform: translateY(-200%);
+    opacity: 1;
+}
+.card:hover img{
+    filter: grayscale(.5);
+    opacity: .5;
+}
+
+/* MEDIA QUERIES for: 1650px */
+@media only screen and (max-width: 1650px){
+    .work{
+        width: 1400px;
     }
+}
+/* MEDIA QUERIES for: 1450px */
+@media only screen and (max-width: 1450px){
+    .work{
+        width: 1200px;
+    }
+    .card h3{
+        font-size: 24px;
+    }
+}
+/* MEDIA QUERIES for: 1250px */
+@media only screen and (max-width: 1250px){
+    .work{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+    }
+    .card{
+        width: 200px;
+        margin: 0;
+        width: 100%;
+    }
+}
+/* MEDIA QUERIES for: 950px */
+@media only screen and (max-width: 950px){
+    .work{
+        display: block;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 4px;
+        width: 450px;
+        margin: auto;
+    }
+    .card h3{
+        font-size: 48px;
+    }
+}
+/* MEDIA QUERIES for: 950px */
+@media only screen and (max-width: 600px){
+    .work{
+        width: 300px;
+    }
+    .card h3{
+        font-size: 32px;
+    }
+}
+
+/* footer */
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.footer-logo,
+.footer-btn{
+    margin: 0 auto;
+    padding: 0;
+    background-color: #000;
 }
