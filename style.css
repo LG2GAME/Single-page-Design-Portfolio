@@ -13,7 +13,7 @@ body{
 :root{
     --bg: #fff7f1;
 
-    --nav: #F2E2D2;
+    --nav: #fff7f1;
     --nav-a: #051923;
 
     --box-color1: #53599A;
@@ -35,7 +35,7 @@ nav{
     display: flex;
     justify-content: space-between;
     padding: 1.5rem;
-    background-color: var(--nav);
+    /* background-color: var(--nav); */
 }
 .logo{
     margin-left: 10%;
@@ -63,6 +63,8 @@ nav{
 ul{
     list-style: none;
     display: flex;
+    background-color: #000;
+    border-radius: 50px;
 }
 /* list element */
 li{
@@ -75,13 +77,14 @@ li a{
     font-size: 24px;
     font-weight: 400;
     transition: all .2s ease-in-out;
+    color: #fff;
 }
 /* simple hover animation */
 .element-home a:hover,
 .element-about a:hover,
 .element-work a:hover{
     font-weight: 700;
-    color: var(--about-btn);
+    /* color: var(--about-btn); */
 }
 
 /* responsive hamburger menu */
@@ -118,6 +121,7 @@ li a{
         z-index: 10;
         align-items: center;
         justify-content: center;
+        border-radius: 0;
     }
     ul.active{
         transform: translateX(0%);
@@ -127,6 +131,7 @@ li a{
         font-weight: 600;
         letter-spacing: 5px;
         margin: 1rem;
+        color: var(--nav-a);
     }
     li{
         padding: 0;
@@ -541,6 +546,83 @@ li a{
     }
     .card h3{
         font-size: 32px;
+    }
+}
+
+/* footer informations */
+.footer-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem;
+}
+.footer-informations{
+    background-color: rgba(0, 0, 0, .95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem;
+    border-radius: 15px;
+    width: 75%;
+}
+.info-left{
+    color: #fff;
+    width: 50%;
+}
+.info-left h3{
+    text-align: center;
+    font-size: 36px;
+    margin: 1rem;
+}
+.info-left p{
+    font-size: 18px;
+    width: 75%;
+    margin: auto;
+}
+
+
+.ft-info-btn{
+    margin: 0;
+    padding: 0;
+}
+
+/* MEDIA QUERIES for: 1300px */
+@media only screen and (max-width: 1300px){
+    .footer-informations{
+        flex-direction: column;
+    }
+    .info-left{
+        width: 100%;
+        margin-bottom: 4rem;
+    }
+    .info-left h3{
+        margin: 2rem;
+    }
+}
+/* MEDIA QUERIES for: 850px */
+@media only screen and (max-width: 850px){
+    .footer-informations{
+        width: 100%;
+    }
+    .info-left{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .info-left h3{
+        margin: .5rem;
+        font-size: 24px;
+    }
+    .info-left p{
+        font-size: 16px;
+    }
+}
+/* MEDIA QUERIES for: 600px */
+@media only screen and (max-width: 600px){
+    .footer-box{
+        margin: 5rem 0;
+    }
+    .footer-informations{
+        padding: 2.5rem;
     }
 }
 
