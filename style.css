@@ -778,6 +778,9 @@ footer {
 .footer-btn {
     margin: 0 auto;
     padding: 0;
+}
+
+.footer-btn{
     background-color: #000;
 }
 
